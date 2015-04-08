@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <form method="post" action="/app/route/">
+            {% csrf_token %}
+            <select name="stop1name">
+                {% for stop in stop_list %}
+                <option value ="{{ stop.stopId }}">{{ stop.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="stop2name">
+                {% for stop in stop_list %}
+                <option value ="{{ stop.stopId }}">{{ stop.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Find locations">
+        </form>
+    </body>
+</html>
